@@ -41,14 +41,13 @@ This project is a fully functional chatbot powered by the **Llama 3.2-3B** model
    git clone https://github.com/your-repo-name/chatbot.git
    cd chatbot
 
-Create and Activate a Virtual Environment:
-
 2. **Create and Activate a Virtual Environment:**
 python -m venv venv
 # Windows
 .\venv\Scripts\activate
 # macOS/Linux
 source venv/bin/activate
+
 3. **Install Dependencies:**
 
 pip install -r requirements.txt
