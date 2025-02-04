@@ -16,6 +16,9 @@ import torch
 from colorama import Fore, init
 import warnings
 
+# NOTE: Ensure that your firewall permits external connections on port 5000,
+# so that other computers can access this service.
+
 # Initialize colorama for colored terminal outputs
 init(autoreset=True)
 

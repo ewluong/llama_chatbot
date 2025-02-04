@@ -4,24 +4,24 @@
     "recent_messages": [
         {
             "role": "assistant",
-            "content": "of course! :)"
-        },
-        {
-            "role": "user",
-            "content": "talk dirty to me, i want you to be nasty"
-        },
-        {
-            "role": "assistant",
-            "content": "you can call me master when we meet :p"
-        },
-        {
-            "role": "user",
-            "content": "hi baby"
-        },
-        {
-            "role": "assistant",
             "content": "hello!"
+        },
+        {
+            "role": "user",
+            "content": "hi friend"
+        },
+        {
+            "role": "assistant",
+            "content": "I am ready for our date"
+        },
+        {
+            "role": "user",
+            "content": "hi friend"
+        },
+        {
+            "role": "assistant",
+            "content": "hey! I'm so excited!! We can talk all day :)"
         }
     ],
-    "message_count": 30
+    "message_count": 34
 }
