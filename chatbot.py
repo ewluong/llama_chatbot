@@ -16,24 +16,17 @@ import torch
 from colorama import Fore, init
 import warnings
 
-# NOTE: Ensure that your firewall permits external connections on port 5000,
-# so that other computers can access this service.
+# NOTE: Ensure that your firewall permits external connections on port 5000.
+# Access the service using: http://45.27.27.79:5000
 
-# Initialize colorama for colored terminal outputs
 init(autoreset=True)
-
-# Suppress specific torchvision warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="torchvision.datapoints")
 warnings.filterwarnings("ignore", category=UserWarning, module="torchvision.transforms.v2")
 
-# ------------------------------
-# Logging Configuration
-# ------------------------------
 class CustomFormatter(logging.Formatter):
     def format(self, record):
         return super().format(record)
 
-# Environment-based configuration
 MODEL_NAME = os.getenv("MODEL_NAME", "meta-llama/Llama-3.1-8B")
 CONVERSATIONS_DIR = os.getenv("CONVERSATIONS_DIR", "conversations")
 LOG_FILE = os.getenv("LOG_FILE", "chatbot.log")
@@ -44,13 +37,10 @@ TEMPERATURE = float(os.getenv("TEMPERATURE", 0.7))
 TOP_K = int(os.getenv("TOP_K", 40))
 TOP_P = float(os.getenv("TOP_P", 0.95))
 REPETITION_PENALTY = float(os.getenv("REPETITION_PENALTY", 1.3))
-# When the number of recent messages exceeds this, summarization is triggered.
 ROLLING_WINDOW_SIZE = int(os.getenv("ROLLING_WINDOW_SIZE", 5))
 
-# Ensure the conversations directory exists
 os.makedirs(CONVERSATIONS_DIR, exist_ok=True)
 
-# Configure logging with the custom formatter
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -62,13 +52,8 @@ logging.basicConfig(
 for handler in logging.root.handlers:
     handler.setFormatter(CustomFormatter("%(asctime)s - %(levelname)s - %(message)s"))
 logger = logging.getLogger(__name__)
-
-# Thread lock for file operations (for user-specific conversation files)
 lock = Lock()
 
-# ------------------------------
-# System Prompt and Conversation Structure
-# ------------------------------
 SYSTEM_PROMPT = f"""
 <|begin_of_text|><|start_header_id|>system<|end_header_id|>
 You are Eric, designed to assist a friend by providing clear, evidence‐based solutions and engaging in meaningful conversation. Whether your friend needs help with a specific problem or just wants to chat, respond thoughtfully and appropriately.
@@ -90,9 +75,6 @@ def new_conversation():
         "message_count": 0,
     }
 
-# ------------------------------
-# File Management Functions
-# ------------------------------
 def get_conversation_file(user_id=None):
     filename = f"conversation_{user_id}.json" if user_id else "conversation.json"
     return os.path.join(CONVERSATIONS_DIR, filename)
@@ -140,9 +122,6 @@ def save_conversation(conversation, user_id=None):
         except Exception as e:
             logger.error(f"Error saving conversation for user_id={user_id}: {e}")
 
-# ------------------------------
-# Text Helpers
-# ------------------------------
 def sanitize_input(text):
     return re.sub(r"[^\w\s,.!?]", "", text)
 
@@ -165,9 +144,6 @@ def remove_unwanted_prefixes(response):
     logger.debug("Removed list formatting from response.")
     return response
 
-# ------------------------------
-# Summarization and Memory Management
-# ------------------------------
 def generate_summary(prompt):
     try:
         generated = summarizer(prompt, max_new_tokens=150, clean_up_tokenization_spaces=True)
@@ -205,12 +181,9 @@ def update_conversation_memory(conversation):
         conversation["memory_summary"] = new_summary
         logger.info("Updated long-term conversation memory via hierarchical summarization.")
 
-# ------------------------------
-# Prompt Construction and Response Generation
-# ------------------------------
 def build_prompt(conversation):
     prompt = conversation["system"] + "\n"
-    if conversation["memory_summary"]:
+    if (conversation["memory_summary"]):
         prompt += f"Reminder of previous conversation: {conversation['memory_summary']}\n"
     for msg in conversation["recent_messages"]:
         prompt += f"<|begin_of_text|><|start_header_id|>{msg['role']}<|end_header_id|>\n{msg['content']}\n"
@@ -237,9 +210,6 @@ def generate_response(conversation):
         print(Fore.RED + f"Error during response generation: {e}")
         return "I'm sorry, but I encountered an error while generating a response."
 
-# ------------------------------
-# Model Initialization
-# ------------------------------
 def initialize_model():
     print(Fore.CYAN + "Loading model. This might take a while...")
     try:
@@ -297,9 +267,6 @@ def initialize_model():
 
 tokenizer, model, text_generator, summarizer = initialize_model()
 
-# ------------------------------
-# Flask App and API Endpoints
-# ------------------------------
 app = Flask(__name__, static_folder="static")
 CORS(app)
 app.config["DEBUG"] = False
@@ -310,31 +277,24 @@ def chat():
     if not data:
         logger.warning("No JSON payload received.")
         return jsonify({"error": "Invalid request. JSON payload is required."}), 400
-
     user_message = data.get("message", "").strip()
     user_id = data.get("user_id", None)
     if not user_message:
         logger.warning("Empty message received.")
         return jsonify({"error": "Empty message received."}), 400
-
     user_message = sanitize_input(user_message)
     logger.info(f"User ({user_id}): {user_message}")
-
     conversation = load_conversation(user_id)
     conversation["recent_messages"].append({"role": "user", "content": user_message})
     conversation["message_count"] = conversation.get("message_count", 0) + 1
-
     update_conversation_memory(conversation)
     save_conversation(conversation, user_id)
-
     response = generate_response(conversation)
     logger.info(f"Assistant ({user_id}): {response}")
-
     conversation["recent_messages"].append({"role": "assistant", "content": response})
     conversation["message_count"] = conversation.get("message_count", 0) + 1
     update_conversation_memory(conversation)
     save_conversation(conversation, user_id)
-
     return jsonify({"response": response})
 
 @app.route("/reset", methods=["POST"])
@@ -355,15 +315,11 @@ def reset():
 def health():
     return jsonify({"status": "OK"}), 200
 
-# New endpoint for backrooms conversation (used by the backrooms modal)
 @app.route("/backrooms", methods=["GET"])
 def backrooms():
     conversation = load_conversation()
     return jsonify({"history": conversation["recent_messages"]})
 
-# ------------------------------
-# Static File Serving Endpoints
-# ------------------------------
 @app.route("/")
 def index():
     return send_from_directory(app.static_folder, "index.html")

@@ -30955,3 +30955,19 @@ Updated summary: The user is asking about the darkest secret, and the customer s
  * Running on http://192.168.4.33:5000
 2025-02-04 14:33:23,497 - INFO - [33mPress CTRL+C to quit[0m
 2025-02-04 14:33:49,210 - INFO - 192.168.4.33 - - [04/Feb/2025 14:33:49] "[33mGET / HTTP/1.1[0m" 404 -
+2025-02-04 14:39:53,304 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-02-04 14:39:53,463 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.1-8B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-02-04 14:39:53,966 - DEBUG - Set pad_token to eos_token.
+2025-02-04 14:39:54,082 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.1-8B/resolve/main/config.json HTTP/1.1" 200 0
+2025-02-04 14:39:54,252 - DEBUG - Loading bitsandbytes native library from: C:\Users\Eric\qwen_chatbot\venv\lib\site-packages\bitsandbytes\libbitsandbytes_cuda117.dll
+2025-02-04 14:40:48,508 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.1-8B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-02-04 14:40:48,559 - INFO - Model loaded successfully.
+2025-02-04 14:40:48,578 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.4.33:5000
+2025-02-04 14:40:48,579 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-04 14:45:12,963 - INFO - 45.27.27.79 - - [04/Feb/2025 14:45:12] "[33mGET / HTTP/1.1[0m" 404 -
+2025-02-04 14:45:13,044 - INFO - 45.27.27.79 - - [04/Feb/2025 14:45:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-04 14:45:31,651 - INFO - 45.27.27.79 - - [04/Feb/2025 14:45:31] "[33mGET / HTTP/1.1[0m" 404 -
+2025-02-04 14:45:32,006 - INFO - 45.27.27.79 - - [04/Feb/2025 14:45:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
