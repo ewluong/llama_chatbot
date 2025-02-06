@@ -29,8 +29,8 @@ This project is a fully functional chatbot powered by the **Llama 3.2-3B** model
 
 ### Prerequisites
 1. **Python 3.8+**
-2. **Virtual Environment** (optional but recommended)
-3. **Node.js** (optional, if further frontend work is required)
+2. **Virtual Environment**
+3. **Node.js** 
 
 ---
 
@@ -38,7 +38,7 @@ This project is a fully functional chatbot powered by the **Llama 3.2-3B** model
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-repo-name/chatbot.git
+   git clone https://github.com/ewluong.github.io/chatbot.git
    cd chatbot
 
 2. **Create and Activate a Virtual Environment:**
