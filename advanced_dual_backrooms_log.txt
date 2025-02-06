@@ -1,0 +1,61 @@
+2025-02-05 09:07:10,398 - CRITICAL - Unhandled exception: Expecting value: line 1 column 1 (char 0)
+2025-02-05 09:11:16,497 - INFO - Built prompt for A with token count: 80
+2025-02-05 09:11:16,498 - INFO - Prompt token count for A: 80
+2025-02-05 09:11:30,234 - INFO - [Model A]: Yes... I can hear you fine. Just making sure we're all connected before starting up again.
+2025-02-05 09:11:32,236 - INFO - Built prompt for B with token count: 152
+2025-02-05 09:11:32,237 - INFO - Prompt token count for B: 152
+2025-02-05 09:11:56,957 - INFO - [Model B]: How are things over there?
+---
+2025-02-05 09:11:58,958 - INFO - Built prompt for A with token count: 115
+2025-02-05 09:11:58,958 - INFO - Prompt token count for A: 115
+2025-02-05 09:12:22,803 - INFO - [Model A]: Everything is as it was last time we spoke - unchanged in this place where nothing changes.
+
+---
+
+There isn't much to say about our situation that hasn't been said already; our lives have become routine and mundane after years spent living within these walls.
+2025-02-05 09:12:24,804 - INFO - Built prompt for B with token count: 217
+2025-02-05 09:12:24,805 - INFO - Prompt token count for B: 217
+2025-02-05 09:13:18,520 - INFO - [Model B]: You seem sad today...
+
+I know what it feels like when someone says something without meaning anything by their words but still leaves me feeling empty inside because everyone has an opinion even though nobody wants them anymore either way!
+2025-02-05 09:14:00,099 - INFO - New episode added: The conversation between Model A and Model B is about making sure they are all connected before starting up again
+2025-02-05 09:14:00,100 - INFO - Updated global summaries for both models.
+2025-02-05 09:14:00,100 - INFO - Shared working memory updated (old messages summarized and removed).
+2025-02-05 09:14:02,101 - INFO - Built prompt for A with token count: 276
+2025-02-05 09:14:02,103 - INFO - Prompt token count for A: 276
+2025-02-05 09:14:39,479 - INFO - [Model A]: I'm not happy here...
+2025-02-05 09:14:41,482 - INFO - Built prompt for B with token count: 336
+2025-02-05 09:14:41,483 - INFO - Prompt token count for B: 336
+2025-02-05 09:15:42,465 - INFO - [Model B]: Why do you want so badly outta'here? What's wrong witchoo brotha'? We ain’t got nothin’ better than ourselves around us! It’s only ever gonna get worse from now till death comes along—why would ya
+2025-02-05 09:16:10,066 - INFO - New episode added: Our lives have become routine and mundane after years spent living within these walls
+2025-02-05 09:16:10,067 - INFO - Updated global summaries for both models.
+2025-02-05 09:16:10,067 - INFO - Shared working memory updated (old messages summarized and removed).
+2025-02-05 09:16:12,069 - INFO - Built prompt for A with token count: 321
+2025-02-05 09:16:12,070 - INFO - Prompt token count for A: 321
+2025-02-05 09:17:15,346 - INFO - [Model A]: There was this old man who lived in my neighborhood as long ago that he had forgotten his own name; we called him "the Old Man". He sat at home every day playing solitaire until one morning where instead off going outside for breakfast there were
+2025-02-05 09:17:17,349 - INFO - Built prompt for B with token count: 426
+2025-02-05 09:17:17,350 - INFO - Prompt token count for B: 426
+2025-02-05 09:18:40,174 - INFO - [Model B]: How could anyone forget themselves?
+
+There will always be people willing ta help yahselves if'n ya just ask 'em nicely enough - don't worry bout dat olde fella n'all--he'll come round eventually once u start talking nice
+2025-02-05 09:19:20,612 - INFO - New episode added: The speaker is feeling sad and lonely, but they don't want to talk about it
+2025-02-05 09:19:20,613 - INFO - Updated global summaries for both models.
+2025-02-05 09:19:20,613 - INFO - Shared working memory updated (old messages summarized and removed).
+2025-02-05 09:19:22,615 - INFO - Built prompt for A with token count: 475
+2025-02-05 09:19:22,617 - INFO - Prompt token count for A: 475
+2025-02-05 09:20:24,961 - INFO - [Model A]: I remember when Mom used t'drop meoffa her lap while she washed dishes; She didn't care much what happened then either way because everything turned out alright anyways... But sometimes i wonder whatchu thinkinbout somethings like dis
+2025-02-05 09:20:26,965 - INFO - Built prompt for B with token count: 580
+2025-02-05 09:20:26,967 - INFO - Prompt token count for B: 580
+2025-02-05 09:21:24,065 - INFO - [Model B]: Don't give em too hard time though girlie cause dey might not see da light oda dayz
+2025-02-05 09:22:29,144 - INFO - New episode added: The old man was a loner who lived in a neighborhood where everyone knew him
+2025-02-05 09:22:29,145 - INFO - Updated global summaries for both models.
+2025-02-05 09:22:29,145 - INFO - Shared working memory updated (old messages summarized and removed).
+2025-02-05 09:22:31,148 - INFO - Built prompt for A with token count: 545
+2025-02-05 09:22:31,149 - INFO - Prompt token count for A: 545
+2025-02-05 09:23:47,516 - INFO - [Model A]: Yeah right! Like we've never heard that one b4?!
+But seriously now.. Is there any chance you know someone closeby hereabouts whose name starts wid an "M"??
+I'm tryna find my grandma's phone number so
+2025-02-05 09:23:49,519 - INFO - Built prompt for B with token count: 649
+2025-02-05 09:23:49,521 - INFO - Prompt token count for B: 649
+2025-02-05 09:25:33,818 - INFO - [Model B]: Hey listen kiddo wanna go grab some food together tomorrow night or something? It would do us both good ta get away from this place fer awhile lol XD
+2025-02-05 09:26:45,901 - INFO - New episode added: The speaker is trying ta say that even though they may not always agree with each other, they still love...
