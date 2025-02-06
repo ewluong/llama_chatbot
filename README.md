@@ -38,7 +38,7 @@ This project is a fully functional chatbot powered by the **Llama 3.2-3B** model
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-repo-name/chatbot.git
+   git clone https://github.com/ewluong.github.io/chatbot.git
    cd chatbot
 
 2. **Create and Activate a Virtual Environment:**
