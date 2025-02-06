@@ -29,8 +29,8 @@ This project is a fully functional chatbot powered by the **Llama 3.2-3B** model
 
 ### Prerequisites
 1. **Python 3.8+**
-2. **Virtual Environment** (optional but recommended)
-3. **Node.js** (optional, if further frontend work is required)
+2. **Virtual Environment**
+3. **Node.js** 
 
 ---
 
